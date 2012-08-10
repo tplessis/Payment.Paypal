@@ -5,7 +5,7 @@ This is a Paypal library for FLOW3 heavily inspired by https://github.com/orderl
 
 ### Configuration
 
-In the Settings.yaml, configure your Paypal merchant email and the controller actions wich will received paypal responses :
+In the Settings.yaml, configure your Paypal merchant email and controller actions wich will received paypal responses :
 - Response : This is the controller action where your PayPal buyers will be sent AFTER they have successfully purchased your products.
 - Cancel : This is the controller action where your PayPal buyers will be sent if they cancel purchased.
 - AutoResponse : Controller action wich received Paypal IPN.
@@ -86,4 +86,4 @@ Here is an example of a paypal controller to include in your package :
 	
 	}
 
-?>
+	?>
