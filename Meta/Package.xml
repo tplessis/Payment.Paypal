@@ -3,5 +3,5 @@
 	<key>Payment.Paypal</key>
 	<title>Integration of the Paypal payment solution</title>
 	<description/>
-	<version>1.0</version>
+	<version>0.9</version>
 </package>
