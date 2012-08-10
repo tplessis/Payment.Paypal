@@ -1,0 +1,37 @@
+#                                                                        #
+# Settings Configuration for the Payment.Paypal package                  #
+#                                                                        #
+
+Payment:
+  Paypal:
+    Config:
+      MerchantEmail: 
+        Production: store@mismacard.com
+        Development: totem_1337779467_biz@totemnumerique.com
+      CurrencyCode: EUR
+      Uri:
+        Ipn: 
+          Production: https://www.paypal.com/cgi-bin/webscr
+          Development: https://www.sandbox.paypal.com/cgi-bin/webscr
+        Response:
+          Package: 'Misma.Store'
+          ControllerName: 'Paypal'
+          ActionName: 'paypalTrue'
+        AutoResponse:
+          Package: 'Misma.Store'
+          ControllerName: 'Paypal'
+          ActionName: 'paypalValidate'
+        Cancel:
+          Package: 'Misma.Store'
+          ControllerName: 'Paypal'
+          ActionName: 'paypalFalse'
+    Log:
+      PaymentLogger:
+        backend: TYPO3\FLOW3\Log\Backend\FileBackend
+        backendOptions:
+           logFileURL: %FLOW3_PATH_DATA%Logs/Payment_Paypal.log
+           createParentDirectories: TRUE
+           severityThreshold: %LOG_INFO%
+           maximumLogFileSize: 10485760
+           logFilesToKeep: 1
+           logMessageOrigin: FALSE

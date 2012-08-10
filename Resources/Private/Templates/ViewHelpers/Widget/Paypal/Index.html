@@ -1,0 +1,23 @@
+<form action="{uriPaypalIpn}" method="post" id="formPaypal">
+	<f:if condition="{cart}">
+		<f:for each="{cart}" as="order" iteration="orderIterator">
+			<input value="{order.price}" type="hidden" name="amount_{orderIterator.cycle}" />
+			<input value="{order.quantity}" type="hidden" name="quantity_{orderIterator.cycle}" />
+			<input value="{order.name}" type="hidden" name="item_name_{orderIterator.cycle}" />
+			<input value="{order.tva}" type="hidden" name="tax_{orderIterator.cycle}"  />
+		</f:for>
+	</f:if>	
+	<input type="hidden" value="{user.identifier}" name="custom" />
+	<input name="currency_code" type="hidden" value="{currencyCode}" />
+	<input name="shipping" type="hidden" value="0.00" />
+	<input name="tax" type="hidden" value="0.00" />
+	<input name="return" type="hidden" value="{uriResponse}" />
+	<input name="cancel_return" type="hidden" value="{uriCancel}" />
+	<input name="notify_url" type="hidden" value="{uriAutoResponse}" />
+	<input name="cmd" type="hidden" value="_cart" />
+	<input name="business" type="hidden" value="{merchantEmail}" /> 
+	<input name="no_note" type="hidden" value="1" />
+	<input name="upload" type="hidden" value="1"/>
+	<input name="lc" type="hidden" value="FR" />
+	<input name="bn" type="hidden" value="PP-BuyNowBF" />
+</form>
